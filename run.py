@@ -14,5 +14,17 @@ def new_deck():
 
     return deck
 
-mydeck = new_deck()
-print(mydeck)       
+
+def dealCard(deck,player):
+    card = deck.pop()
+    player.append(card)
+    return card
+
+myDeck = new_deck()
+player1 = [ ]
+print(dealCard(myDeck, player1)) 
+
+
+
+
+
