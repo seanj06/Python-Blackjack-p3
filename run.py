@@ -24,20 +24,22 @@ def deal_Card(deck,player):
 def hand_value(hand):
 
     values = {'2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8,
-            '9': 9, '10':10, 'J': 10, 'Q': 10, 'K': 10, 'A': 11}
+            '9': 9, '10':10, 'J': 10, 'Q': 10, 'K': 10, 'A': 1}
 
     total = 0
 
     for card in hand:
         total += values[card[0]] 
-
     
+    if total <= 11 and 'A' in card:
+        total += 10
+
     return total           
 
 # Unit Test Section
 
 
-hand = ['2x', '10x', 'Ax']
+hand = ['5x', 'Ax']
 print(hand_value(hand))
 
 
