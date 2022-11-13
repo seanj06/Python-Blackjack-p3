@@ -37,6 +37,7 @@ def hand_value(hand):
     return total           
 
 
+
 def main():
     deck = new_deck()
     player = []
@@ -47,7 +48,12 @@ def main():
         deal_Card(deck, dealer)
 
     print(f"Your cards are {player[0]}, {player[1]}") 
-    print(f"Dealers cards are {dealer[1]}, x")   
+    print(f"Dealers cards are {dealer[1]}, x") 
+
+    hit_or_stand = input("Would you like to [H]it or [S]tand: ")
+    if hit_or_stand[0] == "H":
+        deal_Card(deck, player)
+        print(f"Your cards are {player[0]}, {player[1]}, {player[2]} \n Would you like to [H]it or [S]tand ")
 
 
 
