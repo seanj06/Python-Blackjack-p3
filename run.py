@@ -36,22 +36,24 @@ def hand_value(hand):
 
     return total           
 
-hand = ['2x', '7x']
-player_hand_value = hand_value(hand)
-dealer_hand_value = hand_value(hand)
-print(player_hand_value)
-print(dealer_hand_value)
 
 def main():
     deck = new_deck()
     player = []
     dealer = []
 
+    for i in range(2):
+        deal_Card(deck, player)
+        deal_Card(deck, dealer)
+
+    print(f"Your cards are {player[0]}, {player[1]}") 
+    print(f"Dealers cards are {dealer[1]}, x")   
+
 
 
 # Unit Test Section
 
-
+main()
 
 
 
