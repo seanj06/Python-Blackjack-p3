@@ -42,6 +42,13 @@ dealer_hand_value = hand_value(hand)
 print(player_hand_value)
 print(dealer_hand_value)
 
+def main():
+    deck = new_deck()
+    player = []
+    dealer = []
+
+
+
 # Unit Test Section
 
 
