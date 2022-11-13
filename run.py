@@ -20,7 +20,7 @@ def deal_Card(deck,player):
     player.append(card)
     return card
 
-
+# Adds up total value of hand using dictionary and returns total
 def hand_value(hand):
 
     values = {'2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8,
@@ -36,11 +36,15 @@ def hand_value(hand):
 
     return total           
 
+hand = ['2x', '7x']
+player_hand_value = hand_value(hand)
+dealer_hand_value = hand_value(hand)
+print(player_hand_value)
+print(dealer_hand_value)
+
 # Unit Test Section
 
 
-hand = ['5x', 'Ax']
-print(hand_value(hand))
 
 
 
