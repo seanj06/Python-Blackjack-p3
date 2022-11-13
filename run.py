@@ -14,15 +14,19 @@ def new_deck():
 
     return deck
 
-
-def dealCard(deck,player):
+# Takes card from shuffled deck and deals to player
+def deal_Card(deck,player):
     card = deck.pop()
     player.append(card)
     return card
 
-myDeck = new_deck()
+
+def to
+
+# Unit Test Section
+my_deck = new_deck()
 player1 = [ ]
-print(dealCard(myDeck, player1)) 
+print(deal_Card(myDeck, player1)) 
 
 
 
