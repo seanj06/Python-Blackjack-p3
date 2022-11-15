@@ -39,6 +39,7 @@ def hand_value(hand):
 
 
 def main():
+    playing = True
     deck = new_deck()
     player = []
     dealer = []
@@ -49,11 +50,19 @@ def main():
 
     print(f"Your cards are {player[0]}, {player[1]}") 
     print(f"Dealers cards are {dealer[1]}, x") 
-
-    hit_or_stand = input("Would you like to [H]it or [S]tand: ")
-    if hit_or_stand[0] == "H":
-        deal_Card(deck, player)
-        print(f"Your cards are {player[0]}, {player[1]}, {player[2]} \n Would you like to [H]it or [S]tand ")
+    
+    while playing:
+        hit_or_stand = input("Would you like to [H]it or [S]tand: ")
+        if hit_or_stand[0] == "H":
+            deal_Card(deck, player)
+            print(f"Your cards are {player[0]}, {player[1]}, {player[2]} \n Would you like to [H]it or [S]tand ")
+        elif hit_or_stand[0] == "S":
+            print("You have chose to stand the dealer will now take their turn") 
+            playing = False
+        else:
+            print("Invalid input please press H to hit or S to stand") 
+            continue 
+        break     
 
 
 
