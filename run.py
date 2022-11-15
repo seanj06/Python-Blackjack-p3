@@ -49,16 +49,16 @@ def main():
         deal_Card(deck, player)
         deal_Card(deck, dealer)
 
-    print(f"Your cards are {' '.join(player)}") 
+    print(f"Your cards are {' '.join(player)}  Total: {(hand_value(player))}") 
     print(f"Dealers cards are {dealer[0]}, x") 
     
     while player_go == True:
         hit_or_stand = input("Would you like to [H]it or [S]tand: ")
         if hit_or_stand[0] == "H":
             deal_Card(deck, player)
-            print(f"Your cards are {' '.join(player)} \n Would you like to [H]it or [S]tand ")
+            print(f"Your cards are {' '.join(player)} Total: {(hand_value(player))}")
         elif hit_or_stand[0] == "S":
-            print("You have chose to stand the dealer will now take their turn") 
+            print(f"Dealer shows {' '.join(dealer)} Total: {(hand_value(dealer))}") 
             player_go = False
             dealer_go = True
             break
@@ -69,9 +69,9 @@ def main():
     
     while hand_value(dealer) < 17:
         deal_Card(deck, dealer)
-        print(f"The dealer has {' '.join(dealer)}")
+        print(f"The dealer has {' '.join(dealer)} Total: {(hand_value(dealer))}")
         if hand_value(dealer) > 21:
-            print(f"The dealer has {' '.join(dealer)}")
+            print(f"The dealer has {' '.join(dealer)} Total: {(hand_value(dealer))}")
             break
 
 
