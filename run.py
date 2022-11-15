@@ -23,8 +23,8 @@ def deal_Card(deck,player):
 # Adds up total value of hand using dictionary and returns total
 def hand_value(hand):
 
-    values = {'2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8,
-            '9': 9, '10':10, 'J': 10, 'Q': 10, 'K': 10, 'A': 1}
+    values = {'2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, 
+    '10': 10, 'J': 10, 'Q': 10, 'K': 10, 'A': 1}
 
     total = 0
 
@@ -39,7 +39,8 @@ def hand_value(hand):
 
 
 def main():
-    playing = True
+    player_go = True
+    dealer_go = False
     deck = new_deck()
     player = []
     dealer = []
@@ -51,18 +52,30 @@ def main():
     print(f"Your cards are {' '.join(player)}") 
     print(f"Dealers cards are {dealer[0]}, x") 
     
-    while playing:
+    while player_go == True:
         hit_or_stand = input("Would you like to [H]it or [S]tand: ")
         if hit_or_stand[0] == "H":
             deal_Card(deck, player)
             print(f"Your cards are {' '.join(player)} \n Would you like to [H]it or [S]tand ")
         elif hit_or_stand[0] == "S":
             print("You have chose to stand the dealer will now take their turn") 
-            playing = False
+            player_go = False
+            dealer_go = True
+            break
         else:
             print("Invalid input please press H to hit or S to stand") 
-            continue 
-        break 
+            
+    
+    
+    while hand_value(dealer) < 17:
+        deal_Card(deck, dealer)
+        print(f"The dealer has {' '.join(dealer)}")
+        if hand_value(dealer) > 21:
+            print(f"The dealer has {' '.join(dealer)}")
+            break
+
+
+         
 
     
 
@@ -71,6 +84,7 @@ def main():
 # Unit Test Section
 
 main()
+
 
 
 
