@@ -34,10 +34,8 @@ def hand_value(hand):
     if total <= 11 and 'A' in card:
         total += 10
 
-    return total           
-
-
-
+    return total 
+             
 def main():
     player_go = True
     dealer_go = False
@@ -52,7 +50,7 @@ def main():
     print(f"Your cards are {' '.join(player)}  Total: {(hand_value(player))}") 
     print(f"Dealers cards are {dealer[0]}, x") 
     
-    while player_go == True:
+    while player_go == True and hand_value(player) < 21:
         hit_or_stand = input("Would you like to [H]it or [S]tand: ")
         if hit_or_stand[0] == "H":
             deal_Card(deck, player)
@@ -71,8 +69,22 @@ def main():
         deal_Card(deck, dealer)
         print(f"The dealer has {' '.join(dealer)} Total: {(hand_value(dealer))}")
         if hand_value(dealer) > 21:
-            print(f"The dealer has {' '.join(dealer)} Total: {(hand_value(dealer))}")
-            break
+            print(f"The dealer has busted you win")
+
+    if hand_value(dealer) > hand_value(player) and hand_value(dealer) < 22:
+        print("Dealer wins")  
+    elif hand_value(dealer) > hand_value(player) and hand_value(dealer) == 21:
+        print("Dealer wins with a blackjack!")    
+    elif hand_value(player) > hand_value(dealer) and hand_value(player) < 22:
+        print("You win") 
+    elif hand_value(player) > hand_value(dealer) and hand_value(player) == 21:
+        print("You win with a blackjack!")    
+    elif hand_value(player) == hand_value(dealer):
+        print("Its a draw")  
+    elif hand_value(player) > 21:
+        print("Sorry you bust")
+              
+
 
 
          
