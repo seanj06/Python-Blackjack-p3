@@ -1,6 +1,10 @@
 import random
 
+
 def new_deck():
+    """
+    Creates a new deck of new cards using suit and ranks lists and shuffles
+    """
 
     suits = ['\u2660', '\u2661', '\u2662', '\u2663']
     ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
@@ -14,27 +18,31 @@ def new_deck():
 
     return deck
 
-# Takes card from shuffled deck and deals to player
+
 def deal_card(deck, player):
+    """
+    Takes card from shuffled deck and deals to player
+    """
     card = deck.pop()
     player.append(card)
     return card
 
-# Adds up total value of hand using dictionary and returns total
-def hand_value(hand):
 
-    values = {'2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7,
+def hand_value(hand):
+    """
+    Adds up total value of hand using dictionary and returns total
+    """
+
+    values = {'1': 0, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7,
               '8': 8, '9': 9, '10': 10, 'J': 10, 'Q': 10, 'K': 10, 'A': 11}
 
     total = 0
     aces = 0
-    
-
+    card = ''
     for card in hand:
         total += values[card[0]] 
-    
-        if card[0] == 'A':
-            aces += 1
+    if card[0] == 'A':
+        aces += 1
 
     while total > 21 and aces > 0:
         total -= 10
@@ -42,10 +50,11 @@ def hand_value(hand):
 
     return total
 
-
-
-# Main game loop             
+            
 def main():
+    """
+    Main game loop
+    """
     player_go = True
     dealer_go = False
     deck = new_deck()
@@ -58,7 +67,6 @@ def main():
 
     print(f"Your cards are {' '.join(player)}  Total: {(hand_value(player))}") 
     print(f"Dealers cards are {dealer[0]}, x") 
-    
     while player_go is True and hand_value(player) < 21:
         hit_or_stand = input("Would you like to [H]it or [S]tand: ")
         if hit_or_stand[0] == "H":
