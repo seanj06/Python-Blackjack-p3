@@ -24,15 +24,21 @@ def deal_Card(deck,player):
 def hand_value(hand):
 
     values = {'2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, 
-    '10': 10, 'J': 10, 'Q': 10, 'K': 10, 'A': 1}
+    '10': 10, 'J': 10, 'Q': 10, 'K': 10, 'A': 11}
 
     total = 0
+    aces = 0
+    
 
     for card in hand:
         total += values[card[0]] 
     
-    if total <= 11 and 'A' in card:
-        total += 10
+        if card[0] == 'A':
+            aces += 1
+
+    while total > 21 and aces > 0:
+        total -= 10
+        aces -= 1 
 
     return total 
              
@@ -83,6 +89,7 @@ def main():
         print("Its a draw")  
     elif hand_value(player) > 21:
         print("Sorry you bust")
+        
               
 
 
@@ -95,9 +102,10 @@ def main():
 
 # Unit Test Section
 
-main()
+#main()
 
-
+hand = ['2x', 'Ax']
+print(hand_value(hand))
 
 
 
