@@ -50,7 +50,25 @@ def hand_value(hand):
 
     return total
 
-            
+
+def check_winner(dealer, player):
+    """
+    Compares total hand values of dealer and player and determines winner
+    """ 
+    if hand_value(dealer) > hand_value(player) and hand_value(dealer) < 22:
+        print("Dealer wins")  
+    elif hand_value(dealer) > hand_value(player) and hand_value(dealer) == 21:
+        print("Dealer wins with a blackjack!")    
+    elif hand_value(player) > hand_value(dealer) and hand_value(player) < 22:
+        print("You win") 
+    elif hand_value(player) > hand_value(dealer) and hand_value(player) == 21:
+        print("You win with a blackjack!")    
+    elif hand_value(player) == hand_value(dealer):
+        print("Its a draw")  
+    elif hand_value(player) > 21:
+        print("Sorry you bust")  
+
+
 def main():
     """
     Main game loop
@@ -80,35 +98,13 @@ def main():
         else:
             print("Invalid input please press H to hit or S to stand") 
             
-    
-    
     while hand_value(dealer) < 17:
         deal_card(deck, dealer)
         print(f"The dealer has {' '.join(dealer)} Total: {(hand_value(dealer))}")
         if hand_value(dealer) > 21:
             print(f"The dealer has busted you win")
 
-    if hand_value(dealer) > hand_value(player) and hand_value(dealer) < 22:
-        print("Dealer wins")  
-    elif hand_value(dealer) > hand_value(player) and hand_value(dealer) == 21:
-        print("Dealer wins with a blackjack!")    
-    elif hand_value(player) > hand_value(dealer) and hand_value(player) < 22:
-        print("You win") 
-    elif hand_value(player) > hand_value(dealer) and hand_value(player) == 21:
-        print("You win with a blackjack!")    
-    elif hand_value(player) == hand_value(dealer):
-        print("Its a draw")  
-    elif hand_value(player) > 21:
-        print("Sorry you bust")
-        
-              
-
-
-
-         
-
-    
-
+    check_winner(dealer, player)        
 
 
 # Unit Test Section
