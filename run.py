@@ -74,7 +74,6 @@ def main():
     Main game loop
     """
     player_go = True
-    dealer_go = False
     deck = new_deck()
     player = []
     dealer = []
@@ -93,21 +92,27 @@ def main():
         elif hit_or_stand[0] == "S":
             print(f"Dealer shows {' '.join(dealer)} Total: {(hand_value(dealer))}") 
             player_go = False
-            dealer_go = True
-            break
         else:
             print("Invalid input please press H to hit or S to stand") 
-            
     while hand_value(dealer) < 17:
         deal_card(deck, dealer)
         print(f"The dealer has {' '.join(dealer)} Total: {(hand_value(dealer))}")
         if hand_value(dealer) > 21:
             print(f"The dealer has busted you win")
 
-    check_winner(dealer, player)        
+    check_winner(dealer, player) 
 
-
+    play_again = input("Would you like to play again? [Y] or [N]")
+    if play_again[0] == 'Y':
+        print("Hello")
+    elif play_again[0] == 'N':
+        print("Goodbye")
+    else:
+        print("Invalid input please type Y for yes or N for no")        
+        
+    
 # Unit Test Section
+
 
 main()
 
