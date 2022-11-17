@@ -33,16 +33,16 @@ def hand_value(hand):
     Adds up total value of hand using dictionary and returns total
     """
 
-    values = {'1': 0, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7,
-              '8': 8, '9': 9, '10': 10, 'J': 10, 'Q': 10, 'K': 10, 'A': 11}
+    values = {'2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, 
+              '1': 10, 'J': 10, 'Q': 10, 'K': 10, 'A': 11}
 
     total = 0
     aces = 0
     card = ''
     for card in hand:
-        total += values[card[0]] 
-    if card[0] == 'A':
-        aces += 1
+        total += values[card[0]]
+        if card[0] == 'A':
+            aces += 1
 
     while total > 21 and aces > 0:
         total -= 10
@@ -115,6 +115,10 @@ def main():
 
 
 main()
+
+
+
+
 
 
 
