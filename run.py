@@ -73,42 +73,48 @@ def main():
     """
     Main game loop
     """
-    player_go = True
-    deck = new_deck()
-    player = []
-    dealer = []
-
-    for i in range(2):
-        deal_card(deck, player)
-        deal_card(deck, dealer)
-
-    print(f"Your cards are {' '.join(player)}  Total: {(hand_value(player))}") 
-    print(f"Dealers cards are {dealer[0]}, x") 
-    while player_go is True and hand_value(player) < 21:
-        hit_or_stand = input("Would you like to [H]it or [S]tand: ")
-        if hit_or_stand[0] == "H":
+    playing = True
+    while playing is True:
+        player_go = True
+        deck = new_deck()
+        player = []
+        dealer = []
+    
+        for i in range(2):
             deal_card(deck, player)
-            print(f"Your cards are {' '.join(player)} Total: {(hand_value(player))}")
-        elif hit_or_stand[0] == "S":
-            print(f"Dealer shows {' '.join(dealer)} Total: {(hand_value(dealer))}") 
-            player_go = False
+            deal_card(deck, dealer)
+
+        print(f"Your cards are {' '.join(player)}  Total: {(hand_value(player))}") 
+        print(f"Dealers cards are {dealer[0]}, x") 
+        while player_go is True and hand_value(player) < 21:
+            hit_or_stand = input("Would you like to [H]it or [S]tand: ")
+            if hit_or_stand[0] == "H":
+                deal_card(deck, player)
+                print(f"Your cards are {' '.join(player)} Total: {(hand_value(player))}")
+            elif hit_or_stand[0] == "S":
+                print(f"Dealer shows {' '.join(dealer)} Total: {(hand_value(dealer))}") 
+                player_go = False
+            else:
+                print("Invalid input please press H to hit or S to stand") 
+        while hand_value(dealer) < 17:
+            deal_card(deck, dealer)
+            print(f"The dealer has {' '.join(dealer)} Total: {(hand_value(dealer))}")
+            if hand_value(dealer) > 21:
+                print(f"The dealer has busted you win")
+
+        check_winner(dealer, player) 
+
+        play_again = input("Would you like to play again? [Y] or [N]")
+        if play_again[0] == 'Y':
+            print("Hello")
+            player = []
+            dealer = []
+            continue
+        elif play_again[0] == 'N':
+            print("Goodbye")
+            playing = False
         else:
-            print("Invalid input please press H to hit or S to stand") 
-    while hand_value(dealer) < 17:
-        deal_card(deck, dealer)
-        print(f"The dealer has {' '.join(dealer)} Total: {(hand_value(dealer))}")
-        if hand_value(dealer) > 21:
-            print(f"The dealer has busted you win")
-
-    check_winner(dealer, player) 
-
-    play_again = input("Would you like to play again? [Y] or [N]")
-    if play_again[0] == 'Y':
-        print("Hello")
-    elif play_again[0] == 'N':
-        print("Goodbye")
-    else:
-        print("Invalid input please type Y for yes or N for no")        
+            print("Invalid input please type Y for yes or N for no")        
         
     
 # Unit Test Section
