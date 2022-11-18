@@ -116,8 +116,18 @@ def main():
         
     
 # Unit Test Section
-
-
+print("Welcome to blackjack the card game of skill and luck. The aim of the \
+game is to get to as close to 21 as you can without going over it. If you do\
+you will bust!\
+Each card number is worth that value, Jacks, Queens and Kings\
+are worth 10 and Aces are worth both 1 and 11.\
+You will be dealt 2 cards at the start of the game and will be given a choice\
+wether to hit or stand.\
+If you choose hit you will be dealt another card and if you choose stand it is\
+the dealers turn.\
+The dealer will also be dealt 2 cards but you will only be shown 1 until you\
+have completed your turn.\
+The dealer has to take another card if they have less than 17.")
 main()
 
 
