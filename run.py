@@ -88,10 +88,10 @@ def main():
         print(f"Dealers cards are {dealer[0]}, x") 
         while player_go is True and hand_value(player) < 21:
             hit_or_stand = input("Would you like to [H]it or [S]tand: ")
-            if hit_or_stand[0] == "H":
+            if hit_or_stand[0].lower() == "h":
                 deal_card(deck, player)
                 print(f"Your cards are {' '.join(player)} Total: {(hand_value(player))}")
-            elif hit_or_stand[0] == "S":
+            elif hit_or_stand[0].lower() == "s":
                 print(f"Dealer shows {' '.join(dealer)} Total: {(hand_value(dealer))}") 
                 player_go = False
             else:
@@ -105,12 +105,10 @@ def main():
         check_winner(dealer, player) 
 
         play_again = input("Would you like to play again? [Y] or [N]")
-        if play_again[0] == 'Y':
+        if play_again[0].lower() == 'Y':
             print("Hello")
-            player = []
-            dealer = []
             continue
-        elif play_again[0] == 'N':
+        elif play_again[0].lower() == 'N':
             print("Goodbye")
             playing = False
         else:
