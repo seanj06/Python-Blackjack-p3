@@ -55,18 +55,20 @@ def check_winner(dealer, player):
     """
     Compares total hand values of dealer and player and determines winner
     """ 
-    if hand_value(dealer) > hand_value(player) and hand_value(dealer) < 22:
-        print("Dealer wins")  
-    elif hand_value(dealer) > hand_value(player) and hand_value(dealer) == 21:
-        print("Dealer wins with a blackjack!")    
-    elif hand_value(player) > hand_value(dealer) and hand_value(player) < 22:
-        print("You win") 
-    elif hand_value(player) > hand_value(dealer) and hand_value(player) == 21:
-        print("You win with a blackjack!")    
-    elif hand_value(player) == hand_value(dealer):
-        print("Its a draw")  
+    if hand_value(player) == 21 and hand_value(dealer) != 21:
+        print("You win with a blackjack")
+    elif hand_value(dealer) == 21 and hand_value(player) != 21:
+        print("Dealer wins with a blackjack")
     elif hand_value(player) > 21:
-        print("Sorry you bust")  
+        print("Sorry you have busted") 
+    elif hand_value(dealer) > 21 and hand_value(player) < 22:
+        print("Dealer busts you win")        
+    elif hand_value(player) == hand_value(dealer):
+        print(f"You both have {hand_value(player)} its a draw") 
+    elif 21 - hand_value(player) < 21 - hand_value(dealer):
+        print("You win") 
+    elif 21 - hand_value(dealer) < 21 - hand_value(player):
+        print("Dealer wins")  
 
 
 def main():
@@ -96,19 +98,17 @@ def main():
                 player_go = False
             else:
                 print("Invalid input please press H to hit or S to stand") 
-        while hand_value(dealer) < 17:
+        while hand_value(dealer) < 17 and hand_value(player) < 22:
             deal_card(deck, dealer)
             print(f"The dealer has {' '.join(dealer)} Total: {(hand_value(dealer))}")
-            if hand_value(dealer) > 21:
-                print(f"The dealer has busted you win")
 
         check_winner(dealer, player) 
 
         play_again = input("Would you like to play again? [Y] or [N]")
-        if play_again[0].lower() == 'Y':
+        if play_again[0].lower() == 'y':
             print("Hello")
             continue
-        elif play_again[0].lower() == 'N':
+        elif play_again[0].lower() == 'n':
             print("Goodbye")
             playing = False
         else:
