@@ -45,7 +45,7 @@ def hand_value(hand):
     Adds up total value of hand using dictionary and returns total
     """
 
-    values = {'2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, 
+    values = {'2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9,
               '1': 10, 'J': 10, 'Q': 10, 'K': 10, 'A': 11}
 
     total = 0
@@ -92,8 +92,7 @@ def main():
         player_go = True
         deck = new_deck()
         player = []
-        dealer = []
-    
+        dealer = [] 
         for i in range(2):
             deal_card(deck, player)
             deal_card(deck, dealer)
@@ -125,23 +124,34 @@ def main():
             playing = False
         else:
             print("Invalid input please type Y for yes or N for no")        
-        
-    
-# Unit Test Section
-type_text("Welcome to blackjack the card game of skill and luck.\n\
-The aim of the game is to get to as close to 21 as you can without \
-going over it.\n\
-If you do you will bust!\n\
-Each card number is worth that value, Jacks, Queens and Kings\n\
-are worth 10 and Aces are worth both 1 and 11.\n\
-You will be dealt 2 cards at the start of the game and will be given a choice\
- wether to hit or stand.\n\
-If you choose hit you will be dealt another card and if you choose stand it is\
- the dealers turn.\n\
-The dealer will also be dealt 2 cards but you will only be shown 1 until you\
- have completed your turn.\n\
-The dealer has to take another card if they have less than 17.")
-main()
+
+
+def start_screen():
+    """
+    Start screen message user sees when game first runs
+    """
+    type_text("Welcome to blackjack the card game of skill and luck.\n\
+    The aim of the game is to get to as close to 21 as you can without\
+    going over it.\n\
+    If you do you will bust!\n\
+    Each card number is worth that value, Jacks, Queens and Kings\n\
+    are worth 10 and Aces are worth both 1 and 11.\n\
+    You will be dealt 2 cards at the start of the game and will be given a\
+    choice wether to hit or stand.\n\
+    If you choose hit you will be dealt another card and if you choose stand\
+    it is the dealers turn.\n\
+    The dealer will also be dealt 2 cards but you will only be shown 1 until\
+    you have completed your turn.\n\
+    The dealer has to take another card if they have less than 17.\n")
+    start_game = input("Press Any Key then enter to Start the game \n")
+    try:
+        if "" in start_game:
+            main()
+    except ValueError:
+        print("Invalid input")    
+
+
+start_screen()
 
 
 
