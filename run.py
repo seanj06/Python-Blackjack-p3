@@ -1,4 +1,6 @@
 import random
+import time
+import sys
 
 
 def new_deck():
@@ -17,6 +19,16 @@ def new_deck():
     random.shuffle(deck)
 
     return deck
+
+
+def type_text(text):
+    """
+    Gives printed messages typewriter effect
+    """
+    for letter in text:
+        sys.stdout.write(letter)
+        sys.stdout.flush()
+        time.sleep(0.03)
 
 
 def deal_card(deck, player):
@@ -116,7 +128,7 @@ def main():
         
     
 # Unit Test Section
-print("Welcome to blackjack the card game of skill and luck.\n\
+type_text("Welcome to blackjack the card game of skill and luck.\n\
 The aim of the game is to get to as close to 21 as you can without \
 going over it.\n\
 If you do you will bust!\n\
