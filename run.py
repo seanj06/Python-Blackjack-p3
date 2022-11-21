@@ -110,6 +110,7 @@ def main():
                     player_go = False
             except ValueError:
                 print("Invalid input") 
+                continue
             else:
                 print("Invalid input please press H to hit or S to stand")    
         while hand_value(dealer) < 17 and hand_value(player) < 22:
@@ -151,7 +152,29 @@ def start_screen():
         if "" in start_game:
             main()
     except ValueError:
-        print("Invalid input")    
+        print("Invalid input") 
+
+
+class Chips:
+    """
+    Gives users chips to play game and adds and deducts chips per bet
+    """ 
+
+    def __init__(self):
+        self.chip_balance = 500
+        self.current_bet = 0
+
+    def win_bet(self):
+        """
+        If bet won adds balance to current balance
+        """
+        self.chip_balance += self.current_bet
+
+    def lose_bet(self):
+        """
+        If bet lost deducts from current balance
+        """
+        self.chip_balance -= self.current_bet                 
 
 
 start_screen()
