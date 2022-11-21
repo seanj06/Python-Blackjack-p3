@@ -100,15 +100,18 @@ def main():
         print(f"Your cards are {' '.join(player)}  Total: {(hand_value(player))}") 
         print(f"Dealers cards are {dealer[0]}, x") 
         while player_go is True and hand_value(player) < 21:
-            hit_or_stand = input("Would you like to [H]it or [S]tand: ")
-            if hit_or_stand[0].lower() == "h":
-                deal_card(deck, player)
-                print(f"Your cards are {' '.join(player)} Total: {(hand_value(player))}")
-            elif hit_or_stand[0].lower() == "s":
-                print(f"Dealer shows {' '.join(dealer)} Total: {(hand_value(dealer))}") 
-                player_go = False
+            try:
+                hit_or_stand = input("Would you like to [H]it or [S]tand: ")
+                if hit_or_stand[0].lower() == "h":
+                    deal_card(deck, player)
+                    print(f"Your cards are {' '.join(player)} Total: {(hand_value(player))}")
+                elif hit_or_stand[0].lower() == "s":
+                    print(f"Dealer shows {' '.join(dealer)} Total: {(hand_value(dealer))}") 
+                    player_go = False
+            except ValueError:
+                print("Invalid input") 
             else:
-                print("Invalid input please press H to hit or S to stand") 
+                print("Invalid input please press H to hit or S to stand")    
         while hand_value(dealer) < 17 and hand_value(player) < 22:
             deal_card(deck, dealer)
             print(f"The dealer has {' '.join(dealer)} Total: {(hand_value(dealer))}")
