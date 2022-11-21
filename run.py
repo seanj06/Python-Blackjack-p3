@@ -177,6 +177,19 @@ class Chips:
         self.chip_balance -= self.current_bet                 
 
 
+def bet(chip):
+    """
+    Function for user to input how many chips they want to bet
+    """
+    try:
+        chip.current_bet = int(input("Please enter your bet amount"))
+    except ValueError:
+        print("Please type a valid bet amount")
+    else:
+        if chip.current_bet > chip.chip_balance:
+            print("You dont have that many chips to bet")      
+
+
 start_screen()
 
 
