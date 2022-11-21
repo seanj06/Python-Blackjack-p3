@@ -63,24 +63,30 @@ def hand_value(hand):
     return total
 
 
-def check_winner(dealer, player):
+def check_winner(dealer, player, chips):
     """
     Compares total hand values of dealer and player and determines winner
     """ 
     if hand_value(player) == 21 and hand_value(dealer) != 21:
         print("You win with a blackjack")
+        chips.win_bet()
     elif hand_value(dealer) == 21 and hand_value(player) != 21:
         print("Dealer wins with a blackjack")
+        chips.lose_bet()
     elif hand_value(player) > 21:
         print("Sorry you have busted") 
+        chips.lose_bet()
     elif hand_value(dealer) > 21 and hand_value(player) < 22:
-        print("Dealer busts you win")        
+        print("Dealer busts you win") 
+        chips.win_bet()       
     elif hand_value(player) == hand_value(dealer):
         print(f"You both have {hand_value(player)} its a draw") 
     elif 21 - hand_value(player) < 21 - hand_value(dealer):
         print("You win") 
+        chips.win_bet()
     elif 21 - hand_value(dealer) < 21 - hand_value(player):
         print("Dealer wins")  
+        chips.lose_bet()
 
 
 def main():
@@ -88,7 +94,8 @@ def main():
     Main game loop
     """
     playing = True
-    while playing is True:
+    while playing:
+        player_chips = Chips()
         player_go = True
         deck = new_deck()
         player = []
@@ -99,6 +106,7 @@ def main():
 
         print(f"Your cards are {' '.join(player)}  Total: {(hand_value(player))}") 
         print(f"Dealers cards are {dealer[0]}, x") 
+        bet(player_chips)
         while player_go is True and hand_value(player) < 21:
             try:
                 hit_or_stand = input("Would you like to [H]it or [S]tand: ")
@@ -117,7 +125,7 @@ def main():
             deal_card(deck, dealer)
             print(f"The dealer has {' '.join(dealer)} Total: {(hand_value(dealer))}")
 
-        check_winner(dealer, player) 
+        check_winner(dealer, player, Chips) 
 
         play_again = input("Would you like to play again? [Y] or [N]")
         if play_again[0].lower() == 'y':
@@ -177,19 +185,16 @@ class Chips:
         self.chip_balance -= self.current_bet                 
 
 
-def bet(chip):
+def bet(Chips):
     """
     Function for user to input how many chips they want to bet
     """
     try:
-        chip.current_bet = int(input("Please enter your bet amount"))
+        Chips.current_bet = int(input("Please enter your bet amount \n"))
     except ValueError:
         print("Please type a valid bet amount")
-    else:
-        if chip.current_bet > chip.chip_balance:
-            print("You dont have that many chips to bet")      
-
-
+    
+                
 start_screen()
 
 
