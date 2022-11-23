@@ -99,13 +99,13 @@ def main():
         deck = new_deck()
         player = []
         dealer = [] 
+        print(f"You have {player_chips.chip_balance} chips")
+        bet(player_chips)
         for i in range(2):
             deal_card(deck, player)
             deal_card(deck, dealer)
-        print(f"You have {player_chips.chip_balance} chips")
         print(f"Your cards are {' '.join(player)}  Total: {(hand_value(player))}") 
         print(f"Dealers cards are {dealer[0]}, x") 
-        bet(player_chips)
         while player_go is True and hand_value(player) < 21:
             try:
                 hit_or_stand = input("Would you like to [H]it or [S]tand: ")
@@ -116,9 +116,6 @@ def main():
                     print(f"Dealer shows {' '.join(dealer)} Total: {(hand_value(dealer))}") 
                     player_go = False
             except ValueError:
-                print("Invalid input") 
-                continue
-            else:
                 print("Invalid input please press H to hit or S to stand")    
         while hand_value(dealer) < 17 and hand_value(player) < 22:
             deal_card(deck, dealer)
@@ -141,25 +138,40 @@ def start_screen():
     """
     Start screen message user sees when game first runs
     """
+    start_game = input("Press [S] to start the game or press [I] to read\
+the instructions\n")
+    try:
+        if start_game[0].lower() == 's':
+            main()
+        elif start_game[0].lower() == 'i':
+            instructions()    
+    except ValueError:
+        print("Invalid input") 
+
+
+def instructions():
+    """
+    Function to show player game instructions
+    """ 
     type_text("Welcome to blackjack the card game of skill and luck.\n\
-    The aim of the game is to get to as close to 21 as you can without\
-    going over it.\n\
-    If you do you will bust!\n\
-    Each card number is worth that value, Jacks, Queens and Kings\n\
+The aim of the game is to get to as close to 21 as you can without\
+going over it.\n\
+If you do you will bust!\n\
+Each card number is worth that value, Jacks, Queens and Kings\n\
     are worth 10 and Aces are worth both 1 and 11.\n\
     You will be dealt 2 cards at the start of the game and will be given a\
-    choice wether to hit or stand.\n\
+choice wether to hit or stand.\n\
     If you choose hit you will be dealt another card and if you choose stand\
     it is the dealers turn.\n\
     The dealer will also be dealt 2 cards but you will only be shown 1 until\
     you have completed your turn.\n\
-    The dealer has to take another card if they have less than 17.\n")
-    start_game = input("Press Any Key then enter to Start the game \n")
+    The dealer has to take another card if they have less than 17.\n") 
+    main_menu = input("Press enter to return to the main menu")
     try:
-        if "" in start_game:
-            main()
+        if "" in main_menu:
+            start_screen()
     except ValueError:
-        print("Invalid input") 
+        print("Invalid input")              
 
 
 class Chips:
