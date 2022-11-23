@@ -2,6 +2,8 @@ import random
 import time
 import sys
 
+playing = True
+
 
 def new_deck():
     """
@@ -125,15 +127,8 @@ def main():
 
         check_winner(dealer, player, Chips) 
         print(f"You have {player_chips.chip_balance} chips")
-        play_again = input("Would you like to play again? [Y] or [N]")
-        if play_again.lower() == 'y':
-            continue
-        elif play_again.lower() == 'n':
-            print("Goodbye")
-            playing = False
-        else:
-            print("Invalid input please type Y for yes or N for no")        
-
+        play_again()
+        
 
 def start_screen():
     """
@@ -152,6 +147,25 @@ def start_screen():
         else:
             print("Invalid input")    
         
+
+def play_again():
+    """
+    Prompts user at game end if they want to play again
+    """
+    while True:
+        try:
+            play_again = input("Would you like to play again? [Y] or [N]")
+            if play_again.lower() == 'y':
+                main()
+            elif play_again.lower() == 'n':
+                print(" Thanks for playing Goodbye")
+                start_screen()
+        except ValueError:  
+            print("Invalid input")
+            continue  
+        else:
+            print("Invalid input please type Y for yes or N for no")
+
 
 def name_input():
     """
