@@ -94,7 +94,7 @@ def main():
     Main game loop
     """
     playing = True
-    while playing:
+    while playing:       
         player_go = True
         deck = new_deck()
         player = []
@@ -125,7 +125,6 @@ def main():
         print(f"You have {player_chips.chip_balance} chips")
         play_again = input("Would you like to play again? [Y] or [N]")
         if play_again[0].lower() == 'y':
-            print("Hello")
             continue
         elif play_again[0].lower() == 'n':
             print("Goodbye")
@@ -138,15 +137,34 @@ def start_screen():
     """
     Start screen message user sees when game first runs
     """
-    start_game = input("Press [S] to start the game or press [I] to read\
-the instructions\n")
-    try:
-        if start_game[0].lower() == 's':
-            main()
-        elif start_game[0].lower() == 'i':
-            instructions()    
-    except ValueError:
-        print("Invalid input") 
+    while True:
+        start_game = input("Press [S] to start the game or press [I] to read \
+            the instructions")
+        try:
+            if start_game[0].lower() == 's':
+                name_input()
+            elif start_game[0].lower() == 'i':
+                instructions()    
+        except ValueError:
+            print("Invalid input") 
+        else:
+            print("Invalid input")    
+        
+
+def name_input():
+    """
+    Function for user to enter their name on game start
+    """
+    while True:
+        try:
+            player_name = input("Please enter your name ").strip()
+            if player_name != '':
+                type_text(f"Welcome to the game {player_name} ")
+                main()
+        except ValueError:
+            print("Invalid input") 
+        else:
+            print("Username cant be blank")
 
 
 def instructions():
