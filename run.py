@@ -2,8 +2,6 @@ import random
 import time
 import sys
 
-playing = True
-
 
 def new_deck():
     """
@@ -101,13 +99,13 @@ def main():
         deck = new_deck()
         player = []
         dealer = [] 
-        print(f"You have {player_chips.chip_balance} chips")
+        print(f"You have {player_chips.chip_balance} chips ")
         bet(player_chips)
         for i in range(2):
             deal_card(deck, player)
             deal_card(deck, dealer)
-        print(f"Your cards are {' '.join(player)}  Total: {(hand_value(player))}") 
-        print(f"Dealers cards are {dealer[0]}, x") 
+        print(f"\nYour cards are {' '.join(player)}  Total: {(hand_value(player))}\n") 
+        print(f"Dealers cards are {dealer[0]}, x\n") 
         while player_go is True and hand_value(player) < 21:
             try:
                 hit_or_stand = input("Would you like to [H]it or [S]tand: ")
@@ -118,9 +116,7 @@ def main():
                     print(f"Dealer shows {' '.join(dealer)} Total: {(hand_value(dealer))}") 
                     player_go = False
             except ValueError:
-                print("Invalid input please press H to hit or S to stand") 
-            else:
-                print("Invalid input please press H to hit or S to stand")      
+                print("Invalid input please press H to hit or S to stand")       
         while hand_value(dealer) < 17 and hand_value(player) < 22:
             deal_card(deck, dealer)
             print(f"The dealer has {' '.join(dealer)} Total: {(hand_value(dealer))}")
@@ -159,6 +155,7 @@ def play_again():
                 main()
             elif play_again.lower() == 'n':
                 print(" Thanks for playing Goodbye")
+                player_chips.chip_balance = 500
                 start_screen()
         except ValueError:  
             print("Invalid input")
@@ -238,7 +235,7 @@ def bet(chips):
     """
     while True:
         try:
-            chips.current_bet = int(input("Please enter your bet amount \n"))
+            chips.current_bet = int(input("\nPlease enter your bet amount \n"))
         except ValueError:
             print("Please type a valid bet amount")
         else:
@@ -248,7 +245,7 @@ def bet(chips):
                 break    
     
 
-player_chips = Chips()               
+player_chips = Chips()            
 start_screen()
 
 
