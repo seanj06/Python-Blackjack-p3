@@ -109,14 +109,16 @@ def main():
         while player_go is True and hand_value(player) < 21:
             try:
                 hit_or_stand = input("Would you like to [H]it or [S]tand: ")
-                if hit_or_stand[0].lower() == "h":
+                if hit_or_stand.lower() == "h":
                     deal_card(deck, player)
                     print(f"Your cards are {' '.join(player)} Total: {(hand_value(player))}")
-                elif hit_or_stand[0].lower() == "s":
+                elif hit_or_stand.lower() == "s":
                     print(f"Dealer shows {' '.join(dealer)} Total: {(hand_value(dealer))}") 
                     player_go = False
             except ValueError:
-                print("Invalid input please press H to hit or S to stand")    
+                print("Invalid input please press H to hit or S to stand") 
+            else:
+                print("Invalid input please press H to hit or S to stand")      
         while hand_value(dealer) < 17 and hand_value(player) < 22:
             deal_card(deck, dealer)
             print(f"The dealer has {' '.join(dealer)} Total: {(hand_value(dealer))}")
@@ -124,9 +126,9 @@ def main():
         check_winner(dealer, player, Chips) 
         print(f"You have {player_chips.chip_balance} chips")
         play_again = input("Would you like to play again? [Y] or [N]")
-        if play_again[0].lower() == 'y':
+        if play_again.lower() == 'y':
             continue
-        elif play_again[0].lower() == 'n':
+        elif play_again.lower() == 'n':
             print("Goodbye")
             playing = False
         else:
@@ -138,13 +140,13 @@ def start_screen():
     Start screen message user sees when game first runs
     """
     while True:
-        start_game = input("Press [S] to start the game or press [I] to read "
-                           "the instructions")
         try:
-            if start_game[0].lower() == 's':
+            start_game = input("Press [S] to start the game or press [I] to "
+                               "read the instructions \n").strip()
+            if start_game.lower() == 's':
                 name_input()
-            elif start_game[0].lower() == 'i':
-                instructions()    
+            elif start_game.lower() == 'i':
+                instructions()       
         except ValueError:
             print("Invalid input") 
         else:
@@ -157,14 +159,14 @@ def name_input():
     """
     while True:
         try:
-            player_name = input("Please enter your name ").strip()
+            player_name = input("Please enter your name \n").strip()
             if player_name != '':
                 type_text(f"Welcome to the game {player_name} ")
                 main()
         except ValueError:
             print("Invalid input") 
         else:
-            print("Username cant be blank")
+            print("Invalid input please enter your name")
 
 
 def instructions():
