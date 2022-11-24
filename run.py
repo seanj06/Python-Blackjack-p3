@@ -69,24 +69,24 @@ def check_winner(dealer, player, chips):
     Compares total hand values of dealer and player and determines winner
     """ 
     if hand_value(player) == 21 and hand_value(dealer) != 21:
-        print("You win with a blackjack")
+        print("\nYou win with a blackjack")
         player_chips.win_bet()
     elif hand_value(dealer) == 21 and hand_value(player) != 21:
-        print("Dealer wins with a blackjack")
+        print("\nDealer wins with a blackjack")
         player_chips.lose_bet()
     elif hand_value(player) > 21:
-        print("Sorry you have busted") 
+        print("\nSorry you have busted") 
         player_chips.lose_bet()
     elif hand_value(dealer) > 21 and hand_value(player) < 22:
-        print("Dealer busts you win") 
+        print("\nDealer busts you win") 
         player_chips.win_bet()       
     elif hand_value(player) == hand_value(dealer):
-        print(f"You both have {hand_value(player)} its a draw") 
+        print(f"\nYou both have {hand_value(player)} its a draw") 
     elif 21 - hand_value(player) < 21 - hand_value(dealer):
-        print("You win") 
+        print("\nYou win") 
         player_chips.win_bet()
     elif 21 - hand_value(dealer) < 21 - hand_value(player):
-        print("Dealer wins")  
+        print("\nDealer wins")  
         player_chips.lose_bet()
 
 
@@ -105,29 +105,29 @@ def main():
         for i in range(2):
             deal_card(deck, player)
             deal_card(deck, dealer)
-        print(f"\nYour cards are {' '.join(player)} \
-             Total: {(hand_value(player))}\n") 
+        print(f"\nYour cards are {' '.join(player)}\
+  Total: {(hand_value(player))}\n") 
         print(f"Dealers cards are {dealer[0]}, x\n") 
         while player_go is True and hand_value(player) < 21:
             try:
                 hit_or_stand = input("Would you like to [H]it or [S]tand: ")
                 if hit_or_stand.lower() == "h":
                     deal_card(deck, player)
-                    print(f"Your cards are {' '.join(player)} \
-                        Total: {(hand_value(player))}")
+                    print(f"Your cards are {' '.join(player)}\
+  Total: {(hand_value(player))}")
                 elif hit_or_stand.lower() == "s":
-                    print(f"Dealer shows {' '.join(dealer)} \
-                        Total: {(hand_value(dealer))}") 
+                    print(f"Dealer shows {' '.join(dealer)}\
+  Total: {(hand_value(dealer))}") 
                     player_go = False
             except ValueError:
                 print("Invalid input please press H to hit or S to stand")         
         while hand_value(dealer) < 17 and hand_value(player) < 22:
             deal_card(deck, dealer)
             print(f"The dealer has {' '.join(dealer)}\
-                 Total: {(hand_value(dealer))}")
+  Total: {(hand_value(dealer))}\n")
 
         check_winner(dealer, player, Chips) 
-        print(f"You have {player_chips.chip_balance} chips")
+        print(f"\nYou have {player_chips.chip_balance} chips")
         if player_chips.chip_balance == 0:
             print("Sorry you have run out of chips, game over!")
             playing = False
@@ -161,11 +161,11 @@ def play_again():
     """
     while True:
         try:
-            play_again = input("Would you like to play again? [Y] or [N]")
+            play_again = input("\nWould you like to play again? [Y] or [N]\n")
             if play_again.lower() == 'y':
                 main()
             elif play_again.lower() == 'n':
-                print(" Thanks for playing Goodbye")
+                print("\nThanks for playing Goodbye")
                 player_chips.chip_balance = 500
                 start_screen()
         except ValueError:  
@@ -181,9 +181,9 @@ def name_input():
     """
     while True:
         try:
-            player_name = input("Please enter your name \n").strip()
+            player_name = input("\nPlease enter your name \n").strip()
             if player_name.isalpha():
-                type_text(f"Welcome to the game {player_name} ")
+                type_text(f"\nWelcome to the game {player_name} ")
                 main()
         except ValueError:
             print("Invalid input") 
