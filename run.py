@@ -116,7 +116,7 @@ def main():
                     print(f"Dealer shows {' '.join(dealer)} Total: {(hand_value(dealer))}") 
                     player_go = False
             except ValueError:
-                print("Invalid input please press H to hit or S to stand")       
+                print("Invalid input please press H to hit or S to stand")         
         while hand_value(dealer) < 17 and hand_value(player) < 22:
             deal_card(deck, dealer)
             print(f"The dealer has {' '.join(dealer)} Total: {(hand_value(dealer))}")
@@ -199,7 +199,7 @@ def instructions():
               "shown 1 until you have completed your turn.\n\n "
               "The dealer has to take another card if they have "
               "less than 17.\n\n") 
-    main_menu = input("Press enter to return to the main menu")
+    main_menu = input("Press any key to return to the main menu")
     try:
         if "" in main_menu:
             start_screen()
@@ -241,6 +241,8 @@ def bet(chips):
         else:
             if chips.current_bet > chips.chip_balance:
                 print("You dont have enough chips to place that bet")
+            elif chips.current_bet < 1:
+                print("Please type a valid bet amount")
             else:
                 break    
     
