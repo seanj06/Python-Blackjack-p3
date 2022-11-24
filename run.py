@@ -182,7 +182,7 @@ def name_input():
     while True:
         try:
             player_name = input("Please enter your name \n").strip()
-            if player_name != '':
+            if player_name.isalpha():
                 type_text(f"Welcome to the game {player_name} ")
                 main()
         except ValueError:
