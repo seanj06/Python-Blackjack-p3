@@ -104,25 +104,33 @@ def main():
         for i in range(2):
             deal_card(deck, player)
             deal_card(deck, dealer)
-        print(f"\nYour cards are {' '.join(player)}  Total: {(hand_value(player))}\n") 
+        print(f"\nYour cards are {' '.join(player)} \
+             Total: {(hand_value(player))}\n") 
         print(f"Dealers cards are {dealer[0]}, x\n") 
         while player_go is True and hand_value(player) < 21:
             try:
                 hit_or_stand = input("Would you like to [H]it or [S]tand: ")
                 if hit_or_stand.lower() == "h":
                     deal_card(deck, player)
-                    print(f"Your cards are {' '.join(player)} Total: {(hand_value(player))}")
+                    print(f"Your cards are {' '.join(player)} \
+                        Total: {(hand_value(player))}")
                 elif hit_or_stand.lower() == "s":
-                    print(f"Dealer shows {' '.join(dealer)} Total: {(hand_value(dealer))}") 
+                    print(f"Dealer shows {' '.join(dealer)} \
+                        Total: {(hand_value(dealer))}") 
                     player_go = False
             except ValueError:
                 print("Invalid input please press H to hit or S to stand")         
         while hand_value(dealer) < 17 and hand_value(player) < 22:
             deal_card(deck, dealer)
-            print(f"The dealer has {' '.join(dealer)} Total: {(hand_value(dealer))}")
+            print(f"The dealer has {' '.join(dealer)}\
+                 Total: {(hand_value(dealer))}")
 
         check_winner(dealer, player, Chips) 
         print(f"You have {player_chips.chip_balance} chips")
+        if player_chips.chip_balance == 0:
+            print("Sorry you have run out of chips, game over!")
+            playing = False
+            player_chips.chip_balance = 500
         play_again()
         
 
