@@ -1,6 +1,7 @@
 import random
 import time
 import sys
+import pyfiglet
 
 
 def new_deck():
@@ -138,6 +139,8 @@ def start_screen():
     """
     Start screen message user sees when game first runs
     """
+    welcome_message = pyfiglet.figlet_format("Welcome To Blackjack")
+    print(welcome_message)
     while True:
         try:
             start_game = input("Press [S] to start the game or press [I] to "
