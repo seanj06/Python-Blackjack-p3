@@ -5,6 +5,16 @@ import sys
 import pyfiglet
 
 
+def clear():
+    """
+    Clears screen
+    """
+    if os.name == 'nt':
+        os.system('cls')
+    else:
+        os.system('clear')
+
+
 def new_deck():
     """
     Creates a new deck of new cards using suit and ranks lists and shuffles
@@ -140,8 +150,9 @@ def start_screen():
     """
     Start screen message user sees when game first runs
     """
+    clear()
     welcome_message = pyfiglet.figlet_format("Welcome To", font="asc_____")
-    blackjack_message = pyfiglet.figlet_format("  Blackjack", font="ascii___")
+    blackjack_message = pyfiglet.figlet_format("   Blackjack", font="ascii___")
     print(welcome_message)
     print(blackjack_message)
     while True:
@@ -150,10 +161,8 @@ def start_screen():
                                "read the instructions \n").strip()
             if start_game.lower() == 's':
                 name_input()
-                clear()
             elif start_game.lower() == 'i':
                 instructions()
-                clear()
         except ValueError:
             print("Invalid input")
         else:
@@ -169,9 +178,12 @@ def play_again():
             play_again = input("\nWould you like to play again? [Y] or [N]\n")
             if play_again.lower() == 'y':
                 main()
+                clear()
             elif play_again.lower() == 'n':
                 print("\nThanks for playing Goodbye")
                 player_chips.chip_balance = 500
+                time.sleep(1)
+                clear()
                 start_screen()
         except ValueError:
             print("Invalid input")
@@ -189,6 +201,8 @@ def name_input():
             player_name = input("\nPlease enter your name \n").strip()
             if player_name.isalpha():
                 type_text(f"\nWelcome to the game {player_name} ")
+                time.sleep(1)
+                clear()
                 main()
         except ValueError:
             print("Invalid input")
@@ -200,6 +214,7 @@ def instructions():
     """
     Function to show player game instructions
     """
+    clear()
     type_text("Welcome to blackjack the card game of skill and luck.\n\n"
               "The aim of the game is to get to as close to 21 as you can "
               "without going over\n it.\n"
@@ -262,16 +277,6 @@ def bet(chips):
                 print("Please type a valid bet amount")
             else:
                 break
-
-
-def clear():
-    """
-    Clears screen
-    """
-    if os.name == 'nt':
-        os.system('cls')
-    else:
-        os.system('clear')
 
 
 player_chips = Chips()
