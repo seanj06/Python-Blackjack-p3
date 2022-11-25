@@ -139,14 +139,14 @@ def start_screen():
     """
     Start screen message user sees when game first runs
     """
-    welcome_message = pyfiglet.figlet_format("Welcome To", font="asc_____")
-    blackjack_message = pyfiglet.figlet_format("Blackjack", font="ascii___")
+    welcome_message = pyfiglet.figlet_format("Welcome To", font="asc_____").center(80)
+    blackjack_message = pyfiglet.figlet_format("Blackjack", font="ascii___").center(80)
     print(welcome_message)
     print(blackjack_message)
     while True:
         try:
             start_game = input("Press [S] to start the game or press [I] to "
-                               "read the instructions \n").strip()
+                               "read the instructions \n").center(80)
             if start_game.lower() == 's':
                 name_input()
             elif start_game.lower() == 'i':
@@ -199,15 +199,15 @@ def instructions():
     """
     type_text("Welcome to blackjack the card game of skill and luck.\n\n"
               "The aim of the game is to get to as close to 21 as you can "
-              "without going over\n it.\n "
+              "without going over\n it.\n"
               "If you do you will bust!\n\n "
-              "Each card number is worth that value, Jacks, Queens"
+              "Each card number is worth that value, Jacks, Queens "
               "and Kings\n "
               "are worth 10 and Aces are worth both 1 and 11.\n\n"
-              "You will be dealt 2 cards at the start of the game and will be"
-              "given a choice\n wether to hit or stand.\n\n "
+              "You will be dealt 2 cards at the start of the game and will be "
+              "given a choice\n whether to hit or stand.\n\n"
               "If you choose hit you will be dealt another card and if you"
-              "choose stand it is the dealers turn.\n\n "
+              "choose stand it is the dealers turn.\n\n"
               "The dealer will also be dealt 2 cards but you will only be"
               "shown 1 until you\n have completed your turn.\n\n"
               "The dealer has to take another card if they have "
