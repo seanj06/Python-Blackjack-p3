@@ -139,8 +139,10 @@ def start_screen():
     """
     Start screen message user sees when game first runs
     """
-    welcome_message = pyfiglet.figlet_format("Welcome To\n      Blackjack")
+    welcome_message = pyfiglet.figlet_format("Welcome To", font="5x7")
+    blackjack_message = pyfiglet.figlet_format("Blackjack", font="5x7")
     print(welcome_message)
+    print(blackjack_message)
     while True:
         try:
             start_game = input("Press [S] to start the game or press [I] to "
