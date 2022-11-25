@@ -139,7 +139,7 @@ def start_screen():
     """
     Start screen message user sees when game first runs
     """
-    welcome_message = pyfiglet.figlet_format("Welcome To Blackjack")
+    welcome_message = pyfiglet.figlet_format("Welcome To\n      Blackjack")
     print(welcome_message)
     while True:
         try:
