@@ -1,3 +1,4 @@
+import os
 import random
 import time
 import sys
@@ -139,18 +140,20 @@ def start_screen():
     """
     Start screen message user sees when game first runs
     """
-    welcome_message = pyfiglet.figlet_format("Welcome To", font="asc_____").center(80)
-    blackjack_message = pyfiglet.figlet_format("Blackjack", font="ascii___").center(80)
+    welcome_message = pyfiglet.figlet_format("Welcome To", font="asc_____")
+    blackjack_message = pyfiglet.figlet_format("  Blackjack", font="ascii___")
     print(welcome_message)
     print(blackjack_message)
     while True:
         try:
             start_game = input("Press [S] to start the game or press [I] to "
-                               "read the instructions \n").center(80)
+                               "read the instructions \n").strip()
             if start_game.lower() == 's':
                 name_input()
+                clear()
             elif start_game.lower() == 'i':
                 instructions()
+                clear()
         except ValueError:
             print("Invalid input")
         else:
@@ -216,6 +219,7 @@ def instructions():
     try:
         if "" in main_menu:
             start_screen()
+            clear()
     except ValueError:
         print("Invalid input")
 
@@ -258,6 +262,16 @@ def bet(chips):
                 print("Please type a valid bet amount")
             else:
                 break
+
+
+def clear():
+    """
+    Clears screen
+    """
+    if os.name == 'nt':
+        os.system('cls')
+    else:
+        os.system('clear')
 
 
 player_chips = Chips()
