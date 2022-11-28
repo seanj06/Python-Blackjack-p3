@@ -3,6 +3,10 @@ import random
 import time
 import sys
 import pyfiglet
+import colorama
+from colorama import Fore, Style
+
+colorama.init(autoreset=True)
 
 
 def deal_card_message():
@@ -10,7 +14,7 @@ def deal_card_message():
     Function for ascii art dealing card message
     """
     print_cards = pyfiglet.figlet_format("Dealing Cards..")
-    print(print_cards)
+    print(Fore.MAGENTA + Style.BRIGHT + print_cards)
     time.sleep(2)
     clear()
 
@@ -90,24 +94,24 @@ def check_winner(dealer, player, chips):
     Compares total hand values of dealer and player and determines winner
     """
     if hand_value(player) == 21 and hand_value(dealer) != 21:
-        print("\nYou win with a blackjack")
+        print(Fore.GREEN + "\nYou win with a blackjack")
         player_chips.win_bet()
     elif hand_value(dealer) == 21 and hand_value(player) != 21:
-        print("\nDealer wins with a blackjack")
+        print(Fore.RED + "\nDealer wins with a blackjack")
         player_chips.lose_bet()
     elif hand_value(player) > 21:
-        print("\nSorry you have busted")
+        print(Fore.RED + "\nSorry you have busted")
         player_chips.lose_bet()
     elif hand_value(dealer) > 21 and hand_value(player) < 22:
-        print("\nDealer busts you win")
+        print(Fore.GREEN + "\nDealer busts you win")
         player_chips.win_bet()
     elif hand_value(player) == hand_value(dealer):
-        print(f"\nYou both have {hand_value(player)} its a draw")
+        print(Fore.BLUE + f"\nYou both have {hand_value(player)} its a draw")
     elif 21 - hand_value(player) < 21 - hand_value(dealer):
-        print("\nYou win")
+        print(Fore.GREEN + "\nYou win")
         player_chips.win_bet()
     elif 21 - hand_value(dealer) < 21 - hand_value(player):
-        print("\nDealer wins")
+        print(Fore.RED + "\nDealer wins")
         player_chips.lose_bet()
 
 
@@ -121,7 +125,7 @@ def main():
         deck = new_deck()
         player = []
         dealer = []
-        print(f"You have {player_chips.chip_balance} chips ")
+        print(Fore.BLUE + f"You have {player_chips.chip_balance} chips ")
         bet(player_chips)
         deal_card_message()
         for i in range(2):
@@ -164,8 +168,8 @@ def start_screen():
     clear()
     welcome_message = pyfiglet.figlet_format("Welcome To", font="asc_____")
     blackjack_message = pyfiglet.figlet_format("   Blackjack", font="ascii___")
-    print(welcome_message)
-    print(blackjack_message)
+    print(Fore.BLUE + welcome_message)
+    print(Fore.BLUE + blackjack_message)
     while True:
         try:
             start_game = input("Press [S] to start the game or press [I] to "
