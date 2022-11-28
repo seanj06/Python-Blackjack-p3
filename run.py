@@ -5,6 +5,16 @@ import sys
 import pyfiglet
 
 
+def deal_card_message():
+    """
+    Function for ascii art dealing card message
+    """
+    print_cards = pyfiglet.figlet_format("Dealing Cards..")
+    print(print_cards)
+    time.sleep(2)
+    clear()
+
+
 def clear():
     """
     Clears screen
@@ -113,6 +123,7 @@ def main():
         dealer = []
         print(f"You have {player_chips.chip_balance} chips ")
         bet(player_chips)
+        deal_card_message()
         for i in range(2):
             deal_card(deck, player)
             deal_card(deck, dealer)
@@ -124,8 +135,8 @@ def main():
                 hit_or_stand = input("Would you like to [H]it or [S]tand: ")
                 if hit_or_stand.lower() == "h":
                     deal_card(deck, player)
-                    print(f"Your cards are {' '.join(player)}\
-  Total: {(hand_value(player))}")
+                    print(f"\nYour cards are {' '.join(player)}\
+  Total: {(hand_value(player))}\n")
                 elif hit_or_stand.lower() == "s":
                     print(f"\nDealer shows {' '.join(dealer)}\
   Total: {(hand_value(dealer))}")
@@ -217,7 +228,7 @@ def instructions():
     clear()
     type_text("Welcome to blackjack the card game of skill and luck.\n\n"
               "The aim of the game is to get to as close to 21 as you can "
-              "without going over it. "
+              "without going over\n it. "
               "If you do you will bust!\n\n"
               "Each card number is worth that value, Jacks, Queens "
               "and Kings\n"
