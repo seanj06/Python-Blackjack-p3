@@ -228,7 +228,7 @@ def instructions():
     clear()
     type_text("Welcome to blackjack the card game of skill and luck.\n\n"
               "The aim of the game is to get to as close to 21 as you can "
-              "without going over\n it. "
+              "without going over\nit. "
               "If you do you will bust!\n\n"
               "Each card number is worth that value, Jacks, Queens "
               "and Kings\n"
