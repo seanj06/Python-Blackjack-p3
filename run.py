@@ -127,14 +127,14 @@ def main():
                     print(f"Your cards are {' '.join(player)}\
   Total: {(hand_value(player))}")
                 elif hit_or_stand.lower() == "s":
-                    print(f"Dealer shows {' '.join(dealer)}\
+                    print(f"\nDealer shows {' '.join(dealer)}\
   Total: {(hand_value(dealer))}")
                     player_go = False
             except ValueError:
                 print("Invalid input please press H to hit or S to stand")
         while hand_value(dealer) < 17 and hand_value(player) < 22:
             deal_card(deck, dealer)
-            print(f"The dealer has {' '.join(dealer)}\
+            print(f"\nThe dealer has {' '.join(dealer)}\
   Total: {(hand_value(dealer))}\n")
 
         check_winner(dealer, player, Chips)
@@ -217,19 +217,25 @@ def instructions():
     clear()
     type_text("Welcome to blackjack the card game of skill and luck.\n\n"
               "The aim of the game is to get to as close to 21 as you can "
-              "without going over\n it.\n"
-              "If you do you will bust!\n\n "
+              "without going over it. "
+              "If you do you will bust!\n\n"
               "Each card number is worth that value, Jacks, Queens "
-              "and Kings\n "
+              "and Kings\n"
               "are worth 10 and Aces are worth both 1 and 11.\n\n"
               "You will be dealt 2 cards at the start of the game and will be "
-              "given a choice\n whether to hit or stand.\n\n"
-              "If you choose hit you will be dealt another card and if you"
-              "choose stand it is the dealers turn.\n\n"
-              "The dealer will also be dealt 2 cards but you will only be"
-              "shown 1 until you\n have completed your turn.\n\n"
+              "given a choice\nwhether to hit or stand.\n\n"
+              "If you choose hit you will be dealt another card and if you "
+              "choose stand it\nis the dealers turn.\n\n"
+              "The dealer will also be dealt 2 cards but you will only be "
+              "shown 1 until you\nhave completed your turn.\n\n"
               "The dealer has to take another card if they have "
-              "less than 17.\n\n")
+              "less than 17.\n\n"
+              "You will start the game with 500 chips to bet on every "
+              "turn.\n\n"
+              "If you win the hand you double the amount of chips "
+              "that you bet.\n\n"
+              "If you run out of chips to bet the game will end\n\n"
+              "Good luck!\n\n")
     main_menu = input("Press any key to return to the main menu")
     try:
         if "" in main_menu:
