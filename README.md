@@ -63,8 +63,25 @@ There is also a very simple chip betting system in the game. You will start the 
  The start screen features a "Welcome To Blackjack" ascii text message and a message prompting the user to either press S to start the game or I for the instruction screen.
 
   - If the user presses the S key they are shown a prompt to enter their username.
+  If the username is valid the user is shown a welcome message and the game starts.
  ![Username](docs/README-images/Home-screen.png)
 
-  - If the user presses the I key they are brought to the instructions page
+  - If the user presses the I key they are brought to the instructions page where text is typed out in a typewrite effect and user is given a prompt to enter any key to return to the main menu
+  ![Instruction Page](docs/README-images/ins-page.png)
+
+  ### Bet Input
+
+  ![Bet Input](docs/README-images/Chip-input.png)
+
+  After the user enters a valid username, they are brought to the bet input screen which asks them how many chips they would like to bet
+
+   - If the user tries to bet more chips than they currently have they are shown an error message telling them they dont have enough chips to place the bet.
+   ![Invalid Bet](docs/README-images/invalid-bet.png)
+
+   - If the user tries to type in a bet amount that is not a number or zero they are shown an error message that asks them to type in a valid bet amount.
+   ![Invalid Bet 2](docs/README-images/nan.png)
+
+   - If the user enters a valid bet amount they are shown and ascii message telling them the cards are being dealt before moving on to the next screen.
+   ![Dealing Cards](docs/README-images/deal-cards.png)
  
 

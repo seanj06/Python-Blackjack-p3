@@ -127,7 +127,7 @@ def main():
         player = []
         dealer = []
         print(Fore.LIGHTBLUE_EX + f"You have {player_chips.chip_balance}\
-  chips ")
+ chips ")
         bet(player_chips)
         deal_card_message()
         for i in range(2):
