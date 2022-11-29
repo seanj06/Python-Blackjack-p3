@@ -138,7 +138,7 @@ def main():
             try:
                 hit_or_stand = input("Would you like to [H]it or [S]tand: ")
                 if hit_or_stand.lower() == "h":
-                    time.sleep(1)
+                    time.sleep(0.5)
                     deal_card(deck, player)
                     print(f"\nYour cards are {' '.join(player)}\
   Total: {(hand_value(player))}\n")
@@ -159,8 +159,16 @@ def main():
         check_winner(dealer, player, Chips)
         print(f"\nYou have {player_chips.chip_balance} chips")
         if player_chips.chip_balance == 0:
-            print("Sorry you have run out of chips, game over!")
+            time.sleep(2.5)
+            clear()
+            game_over = pyfiglet.figlet_format(" Sorry you have "
+                                               " run out of chips\nGame Over!")
+            
+            print(Fore.MAGENTA + game_over)
+            time.sleep(2.5)
             playing = False
+            clear()
+            start_screen()
             player_chips.chip_balance = 500
         play_again()
 
@@ -170,6 +178,7 @@ def start_screen():
     Start screen message user sees when game first runs
     """
     clear()
+    player_chips.chip_balance = 500
     welcome_message = pyfiglet.figlet_format(" Welcome To", font="asc_____")
     blackjack_message = pyfiglet.figlet_format("   Blackjack", font="ascii___")
     print(Fore.LIGHTBLUE_EX + welcome_message)
