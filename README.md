@@ -24,7 +24,7 @@ There is also a very simple chip betting system in the game. You will start the 
 
 ## Project Goals
 
- - This project was created for project 3 of Code Institutes Diploma in full stack web development.
+ This project was created for project 3 of Code Institutes Diploma in full stack web development.
 
  - ### Main goals of this project include
   
@@ -66,7 +66,7 @@ There is also a very simple chip betting system in the game. You will start the 
   If the username is valid the user is shown a welcome message and the game starts.
  ![Username](docs/README-images/Home-screen.png)
 
-  - If the user presses the I key they are brought to the instructions page where text is typed out in a typewrite effect and user is given a prompt to enter any key to return to the main menu
+  - If the user presses the I key they are brought to the instructions page where text is typed out in a typewriter effect and user is given a prompt to enter any key to return to the main menu
   ![Instruction Page](docs/README-images/ins-page.png)
 
  ### Bet Input
@@ -108,6 +108,34 @@ There is also a very simple chip betting system in the game. You will start the 
    - If the user runs out of chips they are told that they have run out of chips, shown an ascii text game over message and are brought back to the start screen. Their chips are also reset.
    ![Out Of Chips](docs/README-images/out-of-chips.png)
    ![Game Over](docs/README-images/game-over.png)
+
+## Technologies
+
+ ### Platforms
+
+   - Python was the programming language used to create this project.
+
+   - [Heroku](https://www.heroku.com/) was the platform used to deploy the project.
+
+   - [Github](https://github.com/) and Git were used for version control on the project.
+
+   - Gitpod was the I.D.E used to create the project.
+
+   - [Code Institute](https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwihmpOZxdT7AhUY7O0KHQfoCQoYABAAGgJkZw&ohost=www.google.com&cid=CAESbOD23lTrQj-qdni7kiJrbFGiE6foYCdCBlBfPjQiteL7YMJQfW4m6Wq768MU5PttgLc80SMqCtz2JIXMrLRwvBZnNHF48SVSK7-f6l2qO2XaL1vj4yBiBt3ZFE9Zd3_sMo8_VpVo0G1C0DeN0A&sig=AOD64_0o-rshCZ_TWMJtTwfpl71-w7W3GA&q&adurl&ved=2ahUKEwiC6ouZxdT7AhUPXMAKHXZJARkQ0Qx6BAgHEAE) template was used on Gitpod for this project.
+
+ ### Python Modules
+
+   - os was imported to make the clear function to clear the terminal
+
+   - random was imported for the card shuffle function.
+
+   - time was imported for the sleep function.
+
+   - pyfiglet was imported for custom ascii messages.
+
+   - colorama was imported for custom coloured messages.  
+
+
 
  
 
