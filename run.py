@@ -125,7 +125,7 @@ def main():
         deck = new_deck()
         player = []
         dealer = []
-        print(Fore.BLUE + f"You have {player_chips.chip_balance} chips ")
+        print(Fore.LIGHTBLUE_EX + f"You have {player_chips.chip_balance} chips ")
         bet(player_chips)
         deal_card_message()
         for i in range(2):
@@ -166,10 +166,10 @@ def start_screen():
     Start screen message user sees when game first runs
     """
     clear()
-    welcome_message = pyfiglet.figlet_format("Welcome To", font="asc_____")
+    welcome_message = pyfiglet.figlet_format(" Welcome To", font="asc_____")
     blackjack_message = pyfiglet.figlet_format("   Blackjack", font="ascii___")
-    print(Fore.BLUE + welcome_message)
-    print(Fore.BLUE + blackjack_message)
+    print(Fore.LIGHTBLUE_EX + welcome_message)
+    print(Fore.LIGHTBLUE_EX + blackjack_message)
     while True:
         try:
             start_game = input("Press [S] to start the game or press [I] to "
