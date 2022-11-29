@@ -159,11 +159,10 @@ def main():
         check_winner(dealer, player, Chips)
         print(f"\nYou have {player_chips.chip_balance} chips")
         if player_chips.chip_balance == 0:
+            type_text("\nSorry you have run out of chips")
             time.sleep(2.5)
             clear()
-            game_over = pyfiglet.figlet_format(" Sorry you have "
-                                               " run out of chips\nGame Over!")
-            
+            game_over = pyfiglet.figlet_format(" Game  Over !")
             print(Fore.MAGENTA + game_over)
             time.sleep(2.5)
             playing = False
