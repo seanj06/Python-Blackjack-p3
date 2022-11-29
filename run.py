@@ -6,6 +6,7 @@ import pyfiglet
 import colorama
 from colorama import Fore, Style
 
+
 colorama.init(autoreset=True)
 
 
@@ -125,7 +126,8 @@ def main():
         deck = new_deck()
         player = []
         dealer = []
-        print(Fore.LIGHTBLUE_EX + f"You have {player_chips.chip_balance} chips ")
+        print(Fore.LIGHTBLUE_EX + f"You have {player_chips.chip_balance}\
+                                    chips ")
         bet(player_chips)
         deal_card_message()
         for i in range(2):
@@ -202,10 +204,10 @@ def play_again():
     """
     while True:
         try:
-            start_again = input("\nWould you like to play again? [Y] or [N]:\n")
+            start_again = input("\nWould you like to play again? [Y] or [N]\n")
             if start_again.lower() == 'y':
                 clear()
-                main()   
+                main()
             elif start_again.lower() == 'n':
                 print("\nThanks for playing Goodbye")
                 player_chips.chip_balance = 500
