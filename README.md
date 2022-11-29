@@ -69,7 +69,7 @@ There is also a very simple chip betting system in the game. You will start the 
   - If the user presses the I key they are brought to the instructions page where text is typed out in a typewrite effect and user is given a prompt to enter any key to return to the main menu
   ![Instruction Page](docs/README-images/ins-page.png)
 
-  ### Bet Input
+ ### Bet Input
 
   ![Bet Input](docs/README-images/Chip-input.png)
 
@@ -83,5 +83,31 @@ There is also a very simple chip betting system in the game. You will start the 
 
    - If the user enters a valid bet amount they are shown and ascii message telling them the cards are being dealt before moving on to the next screen.
    ![Dealing Cards](docs/README-images/deal-cards.png)
+
+ ### Main Game Screen
+
+  ![Main Game Screen](docs/README-images/game-screen.png) 
+
+  After the user enters a valid bet amount the cards are dealt and the user is brought to the main game screen. The user is shown their two cards and total, 1 dealer card and total and are given the option whether to hit or stand.
+
+   - If the user selects hit they are dealt another card and asked to hit or stand again until they bust or choose to stand.
+   ![Player Hit](docs/README-images/hit-screen.png)
+
+   - If the user selects stand it is the dealers turn. The dealers 2 cards and total are now revealed to the player and the dealer takes another card if they are not already on a total of 17.
+   ![Player Stand](docs/README-images/stand-screen.png)
+
+   - After both the player has chosen to stand and the dealer has taken its go the 2 hands are compared and the user is told if they either won or lost the hand. If the user won the hand the text is green and if the user lost the hand the text is red.
+   The user is then given an updated chip count and asked if they want to play again.
+   ![Hand Compare](docs/README-images/hand-compare.png)
+
+   - If the user selects no on playing again they are brought back to the start screen and their chips reset.
+
+   - If the user selects yes on playing again they are brought back to the bet input screen and their current chip count stays the same.
+   ![Play Again](docs/README-images/play-again.png)
+
+   - If the user runs out of chips they are told that they have run out of chips, shown an ascii text game over message and are brought back to the start screen. Their chips are also reset.
+   ![Out Of Chips](docs/README-images/out-of-chips.png)
+   ![Game Over](docs/README-images/game-over.png)
+
  
 
