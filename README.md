@@ -54,3 +54,17 @@ There is also a very simple chip betting system in the game. You will start the 
 
    - Game feedback if I have an incorrect input
 
+## Features
+
+ ### Start screen
+
+ ![Start Screen](docs/README-images/start-screen.png)
+
+ The start screen features a "Welcome To Blackjack" ascii text message and a message prompting the user to either press S to start the game or I for the instruction screen.
+
+  - If the user presses the S key they are shown a prompt to enter their username.
+ ![Username](docs/README-images/Home-screen.png)
+
+  - If the user presses the I key they are brought to the instructions page
+ 
+
