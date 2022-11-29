@@ -138,17 +138,21 @@ def main():
             try:
                 hit_or_stand = input("Would you like to [H]it or [S]tand: ")
                 if hit_or_stand.lower() == "h":
+                    time.sleep(1)
                     deal_card(deck, player)
                     print(f"\nYour cards are {' '.join(player)}\
   Total: {(hand_value(player))}\n")
                 elif hit_or_stand.lower() == "s":
+                    time.sleep(1)
                     print(f"\nDealer shows {' '.join(dealer)}\
   Total: {(hand_value(dealer))}")
                     player_go = False
+                    time.sleep(1)
             except ValueError:
                 print("Invalid input please press H to hit or S to stand")
         while hand_value(dealer) < 17 and hand_value(player) < 22:
             deal_card(deck, dealer)
+            time.sleep(1)
             print(f"\nThe dealer has {' '.join(dealer)}\
   Total: {(hand_value(dealer))}\n")
 
@@ -173,7 +177,7 @@ def start_screen():
     while True:
         try:
             start_game = input("Press [S] to start the game or press [I] to "
-                               "read the instructions \n").strip()
+                               "read the instructions : \n").strip()
             if start_game.lower() == 's':
                 name_input()
             elif start_game.lower() == 'i':
@@ -190,11 +194,11 @@ def play_again():
     """
     while True:
         try:
-            play_again = input("\nWould you like to play again? [Y] or [N]\n")
-            if play_again.lower() == 'y':
-                main()
+            start_again = input("\nWould you like to play again? [Y] or [N]:\n")
+            if start_again.lower() == 'y':
                 clear()
-            elif play_again.lower() == 'n':
+                main()   
+            elif start_again.lower() == 'n':
                 print("\nThanks for playing Goodbye")
                 player_chips.chip_balance = 500
                 time.sleep(1)
@@ -251,7 +255,7 @@ def instructions():
               "that you bet.\n\n"
               "If you run out of chips to bet the game will end\n\n"
               "Good luck!\n\n")
-    main_menu = input("Press any key to return to the main menu")
+    main_menu = input("Press any key to return to the main menu : ")
     try:
         if "" in main_menu:
             start_screen()
