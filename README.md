@@ -120,6 +120,22 @@ There is also a very simple chip betting system in the game. You will start the 
 
    ![Game Over](docs/README-images/game-over.png)
 
+## Possible Future Features
+
+ Some possible features that could be implemented into the game in the future are
+
+   - Leaderboard betting system
+
+     - While there is currently a chip betting system already in the game I would like to expand on it for game replayability.
+
+   - ASCII card art
+
+     - While there are curently unicode suits for cards I would like to have the cards generated in ASCII art in the future, including different colors to match card suits.
+
+   - Sound effects
+
+     - Card shuffling sound effects is a feature I would eventually like to add to the game.  
+
 ## Technologies
 
  ### Platforms
@@ -184,7 +200,6 @@ There is also a very simple chip betting system in the game. You will start the 
  ### Unit and bug testing
 
   - All other testing for this project including unit test and bugs are on a seperate file found here ..    
-
 
 
 ## Deployment
