@@ -179,9 +179,37 @@ There is also a very simple chip betting system in the game. You will start the 
 
   - As a user I want game feedback if I have an incorrect input.
 
-     - The user is given clear instructions in game on every input needed and are unable to continue until they input correctly.       
+     - The user is given clear instructions in game on every input needed and are unable to continue until they input correctly.
 
-   
+ ### Unit and bug testing
+
+  - All other testing for this project including unit test and bugs are on a seperate file found here ..    
+
+
+
+## Deployment
+
+  The following steps were used to deploy this project to [Heroku](https://www.heroku.com/) 
+
+   - Go to Heroku and click on the new button in the top right corner of the page. Then select create new app from the dropdown menu.
+
+   - Choose an app name, select the region and click create app.
+
+   - Go to settings and select Config Vars
+
+   - Add a new Config Var with a key word of PORT and a value of 8000
+
+   - Next in settings find Buildpacks and add Buildpacks Python and NodeJS in that order.
+
+   - Exit settings and click Deploy. Select Github from the deploy options.
+
+   - Find your repository and connect it to Heroku.
+
+   - Select Manual Deploy from the options, make sure main branch is selected and click Deploy Branch.
+
+   - Live version of the app can be found here [Live Game Link](https://python-blackjack.herokuapp.com/)
+
+
 
 
  
