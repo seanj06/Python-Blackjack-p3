@@ -152,6 +152,37 @@ There is also a very simple chip betting system in the game. You will start the 
 
  ![Flowchart](docs/README-images/flowchart.png)
 
+## Testing
+
+ ### Validator Testing
+
+  - No errors or warnings were found when putting the code through the CI Python Linter
+  ![Linter](docs/README-images/linter.png)
+  
+ ### Testing User Stories
+
+  - As a user I want clear instructions on how to start the game.
+
+     - The start screen has a very simple layout and only gives the user two clearly labelled options. Either S to start the game or I to read the instructions.
+
+  -  As a user I want Instructions on how to play the game.
+
+     - On the start screen if the user wishes to they can select to view the instructions page which gives a full rundown on how the game works.
+
+  -  As a user I want an option to play the game again when finished.
+
+     - After every hand the user is given the choice to play again by typing Y for yes or N for no. If the user wants to continue on with their current chips they can select yes, otherwise they can select no. 
+
+  - As a user I want to be able to enter a username .
+
+     - At the start of every game the user must enter a username to continue.
+
+  - As a user I want game feedback if I have an incorrect input.
+
+     - The user is given clear instructions in game on every input needed and are unable to continue until they input correctly.       
+
+   
+
 
  
 
