@@ -136,15 +136,15 @@ There is also a very simple chip betting system in the game. You will start the 
 
  ### Python Modules
 
-   - os was imported to make the clear function to clear the terminal
+   - [os](https://docs.python.org/3/library/os.html) was imported to make the clear function to clear the terminal
 
-   - random was imported for the card shuffle function.
+   - [random](https://docs.python.org/3/library/random.html) was imported for the card shuffle function.
 
-   - time was imported for the sleep function.
+   - [time](https://docs.python.org/3/library/time.html) was imported for the sleep function.
 
-   - pyfiglet was imported for custom ascii messages.
+   - [pyfiglet](https://pypi.org/project/pyfiglet/0.7/) was imported for custom ascii messages.
 
-   - colorama was imported for custom coloured messages.  
+   - [colorama](https://pypi.org/project/colorama/) was imported for custom coloured messages.  
 
 
 
