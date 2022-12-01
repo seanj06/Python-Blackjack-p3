@@ -144,8 +144,13 @@ There is also a very simple chip betting system in the game. You will start the 
 
    - [pyfiglet](https://pypi.org/project/pyfiglet/0.7/) was imported for custom ascii messages.
 
-   - [colorama](https://pypi.org/project/colorama/) was imported for custom coloured messages.  
+   - [colorama](https://pypi.org/project/colorama/) was imported for custom coloured messages. 
 
+## Flow Chart
+
+ The below flow chart was used in the design of the game and shows how the game loop works from start to finish.
+
+ ![Flowchart](docs/README-images/flowchart.png)
 
 
  
