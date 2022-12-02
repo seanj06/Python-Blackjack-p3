@@ -226,6 +226,22 @@ There is also a very simple chip betting system in the game. You will start the 
 
 ## Credits
 
+  - Card suit  unicode symbols were found on wikipedia [Here](https://en.wikipedia.org/wiki/Playing_cards_in_Unicode)
+
+  - The clear display function was found on geek for geeks [Here](https://www.geeksforgeeks.org/clear-screen-python/#:~:text=You%20can%20simply%20%E2%80%9Ccls%E2%80%9D%20to%20clear%20the%20screen%20in%20windows.)
+
+  - Template used for this project was the Code Institute python essentials template found [Here](https://github.com/Code-Institute-Org/python-essentials-template)
+
+  - The flowchart created for this project was made on [Lucidchart](https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwjm0IXtxdv7AhUm7-0KHRVNDHwYABAAGgJkZw&ohost=www.google.com&cid=CAESbOD2FmT0TtByzzkK620v_t26vgxZBwp1SyXz5cFeI64MHuAO2lqZGDOZZBd9ZTH5BuNL_bcb_Nr1Z5HKl_aYY9dOpjvjSG3PcPU27A1FbQ5b2_Us-gOYsRmxM1SH0BUrkbAYjVAiG8hA6ifQ2A&sig=AOD64_2FaTT_YSoGZDvf3kC_eU4DD5hjRw&q&adurl&ved=2ahUKEwiA0P7sxdv7AhUCYcAKHQmCCdQQ0Qx6BAgJEAE)
+
+  - The linter used for code validation was the CI Python Linter found [Here](https://pep8ci.herokuapp.com/)
+
+  - The idea of how to set up the deck and dictionary values for cards were Found on Dave Crabbes youtube video [Here](https://www.youtube.com/watch?v=SHz5cUeljZw)
+
+  - [Stack Overflow](https://stackoverflow.com/) was used for solutions for various bug fixes.
+
+  - [W3Schools](https://www.w3schools.com/) was used for research on various syntaxes.
+
 
 
 
