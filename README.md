@@ -199,7 +199,7 @@ There is also a very simple chip betting system in the game. You will start the 
 
  ### Unit and bug testing
 
-  - All other testing for this project including unit test and bugs are on a seperate file found here ..    
+  - All other testing for this project including unit testing and bugs are on a seperate file found here [Unit Testing](docs/TESTING.md)  
 
 
 ## Deployment
@@ -223,6 +223,8 @@ There is also a very simple chip betting system in the game. You will start the 
    - Select Manual Deploy from the options, make sure main branch is selected and click Deploy Branch.
 
    - Live version of the app can be found here [Live Game Link](https://python-blackjack.herokuapp.com/)
+
+## Credits
 
 
 
