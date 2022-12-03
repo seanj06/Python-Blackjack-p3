@@ -138,7 +138,7 @@ def main():
         print(f"Dealers cards are {dealer[0]}, x\n")
         while player_go is True and hand_value(player) < 21:
             try:
-                hit_or_stand = input("Would you like to [H]it or [S]tand: ")
+                hit_or_stand = input("\nWould you like to [H]it or [S]tand:\n")
                 if hit_or_stand.lower() == "h":
                     time.sleep(0.5)
                     deal_card(deck, player)
@@ -150,6 +150,8 @@ def main():
   Total: {(hand_value(dealer))}")
                     player_go = False
                     time.sleep(1)
+                else:
+                    raise ValueError
             except ValueError:
                 print("Invalid input please press H to hit or S to stand")
         while hand_value(dealer) < 17 and hand_value(player) < 22:
@@ -309,7 +311,7 @@ def bet(chips):
                 print("You dont have enough chips to place that bet")
             elif chips.current_bet < 1:
                 print("Bet amount must be more than 0")
-            elif chips.current_bet < chips.chip_balance:
+            elif chips.current_bet <= chips.chip_balance:
                 break
             else:
                 raise ValueError
