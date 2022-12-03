@@ -21,6 +21,8 @@ Each card number is worth its value, Jacks, Queens and Kings are worth 10 and Ac
 
 There is also a very simple chip betting system in the game. You will start the game with 500 chips and at the beginning of every hand will be given the choice of how many chips you want to bet. If you win the hand you double the amount of chips you bet and if you lose the hand you lose all the chips you bet. If you run out of chips its game over and the game restarts.
 
+[Top of page](#python-blackjack)
+
 
 ## Project Goals
 
@@ -40,6 +42,8 @@ There is also a very simple chip betting system in the game. You will start the 
 
    - Users that have an interest in playing simple terminal games for fun.
 
+   [Top of page](#python-blackjack)
+
 ## User stories
 
  - As a user I want
@@ -53,6 +57,8 @@ There is also a very simple chip betting system in the game. You will start the 
    - To be able to enter a username
 
    - Game feedback if I have an incorrect input
+
+   [Top of page](#python-blackjack)
 
 ## Features
 
@@ -89,6 +95,8 @@ There is also a very simple chip betting system in the game. You will start the 
 
    ![Dealing Cards](docs/README-images/deal-cards.png)
 
+   [Top of page](#python-blackjack)
+
  ### Main Game Screen
 
   ![Main Game Screen](docs/README-images/game-screen.png) 
@@ -120,6 +128,8 @@ There is also a very simple chip betting system in the game. You will start the 
 
    ![Game Over](docs/README-images/game-over.png)
 
+   [Top of page](#python-blackjack)
+
 ## Possible Future Features
 
  Some possible features that could be implemented into the game in the future are
@@ -134,7 +144,9 @@ There is also a very simple chip betting system in the game. You will start the 
 
    - Sound effects
 
-     - Card shuffling sound effects is a feature I would eventually like to add to the game.  
+     - Card shuffling sound effects is a feature I would eventually like to add to the game. 
+
+     [Top of page](#python-blackjack) 
 
 ## Technologies
 
@@ -162,11 +174,15 @@ There is also a very simple chip betting system in the game. You will start the 
 
    - [colorama](https://pypi.org/project/colorama/) was imported for custom coloured messages. 
 
+   [Top of page](#python-blackjack)
+
 ## Flow Chart
 
  The below flow chart was used in the design of the game and shows how the game loop works from start to finish.
 
  ![Flowchart](docs/README-images/flowchart.png)
+
+ [Top of page](#python-blackjack)
 
 ## Testing
 
@@ -201,6 +217,8 @@ There is also a very simple chip betting system in the game. You will start the 
 
   - All other testing for this project including unit testing and bugs are on a seperate file found here [Unit Testing](docs/TESTING.md)  
 
+  [Top of page](#python-blackjack)
+
 
 ## Deployment
 
@@ -224,6 +242,8 @@ There is also a very simple chip betting system in the game. You will start the 
 
    - Live version of the app can be found here [Live Game Link](https://python-blackjack.herokuapp.com/)
 
+   [Top of page](#python-blackjack)
+
 ## Credits
 
   - Card suit  unicode symbols were found on wikipedia [Here](https://en.wikipedia.org/wiki/Playing_cards_in_Unicode)
@@ -242,6 +262,8 @@ There is also a very simple chip betting system in the game. You will start the 
 
   - [W3Schools](https://www.w3schools.com/) was used for research on various syntaxes.
 
+  [Top of page](#python-blackjack)
+
 ## Acknowledgements
 
  - To my classmates Sean Finn and Victoria Traynor who helped review my project along the way and discussions about various issues and bugs.
@@ -249,6 +271,8 @@ There is also a very simple chip betting system in the game. You will start the 
  - To the slack community as a whole for help and support through the whole project.
 
  - To my friends, family and in particular my fiancee Sinead for support throughout the project.
+
+ [Top of page](#python-blackjack)
 
 
 
