@@ -228,7 +228,7 @@ def name_input():
     while True:
         try:
             player_name = input("\nPlease enter your name \n").strip()
-            if player_name.isalpha():
+            if player_name.isalpha() and len(player_name) > 2:
                 type_text(f"\nWelcome to the game {player_name} ")
                 time.sleep(1)
                 clear()
