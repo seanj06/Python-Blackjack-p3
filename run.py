@@ -236,7 +236,7 @@ def name_input():
         except ValueError:
             print("Invalid input")
         else:
-            print("Invalid input please enter your name")
+            print("Invalid input name must be more than 2 characters")
 
 
 def instructions():
@@ -265,7 +265,7 @@ def instructions():
               "that you bet.\n\n"
               "If you run out of chips to bet the game will end\n\n"
               "Good luck!\n\n")
-    main_menu = input("Press any key to return to the main menu : ")
+    main_menu = input("Press Enter to return to the main menu")
     try:
         if "" in main_menu:
             start_screen()
