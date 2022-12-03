@@ -242,6 +242,14 @@ There is also a very simple chip betting system in the game. You will start the 
 
   - [W3Schools](https://www.w3schools.com/) was used for research on various syntaxes.
 
+## Acknowledgements
+
+ - To my classmates Sean Finn and Victoria Traynor who helped review my project along the way and discussions about various issues and bugs.
+
+ - To the slack community as a whole for help and support through the whole project.
+
+ - To my friends, family and in particular my fiancee Sinead for support throughout the project.
+
 
 
 
