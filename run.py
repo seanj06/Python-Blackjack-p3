@@ -192,10 +192,11 @@ def start_screen():
                 name_input()
             elif start_game.lower() == 'i':
                 instructions()
+            else:
+                raise ValueError
         except ValueError:
             print("Invalid input")
-        else:
-            print("Invalid input")
+            continue
 
 
 def play_again():
@@ -214,11 +215,11 @@ def play_again():
                 time.sleep(1)
                 clear()
                 start_screen()
+            else:
+                raise ValueError
         except ValueError:
             print("Invalid input")
             continue
-        else:
-            print("Invalid input please type Y for yes or N for no")
 
 
 def name_input():
@@ -233,10 +234,11 @@ def name_input():
                 time.sleep(1)
                 clear()
                 main()
+            else:
+                raise ValueError
         except ValueError:
-            print("Invalid input")
-        else:
             print("Invalid input name must be more than 2 characters")
+            continue
 
 
 def instructions():
@@ -303,15 +305,17 @@ def bet(chips):
     while True:
         try:
             chips.current_bet = int(input("\nPlease enter your bet amount \n"))
-        except ValueError:
-            print("Please type a valid bet amount")
-        else:
             if chips.current_bet > chips.chip_balance:
                 print("You dont have enough chips to place that bet")
             elif chips.current_bet < 1:
-                print("Please type a valid bet amount")
-            else:
+                print("Bet amount must be more than 0")
+            elif chips.current_bet < chips.chip_balance:
                 break
+            else:
+                raise ValueError
+        except ValueError:
+            print("Please type a valid bet amount")
+            continue
 
 
 player_chips = Chips()
