@@ -9,6 +9,40 @@ Game developed by Sean Johnston for Code Institute Project Portfolio 3 using Pyt
 
 ![Home Screen](docs/README-images/Home-screen.png)
 
+## Table of contents
+
+1.  [How to play](#how-to-play)
+
+2.  [Project Goals](#project-goals)
+    - [Main Goals](#main-goals-of-this-project-include)
+    - [Target Audience](#target-audience-of-the-project-include)
+
+3.  [User Stories](#user-stories)
+
+4.  [Features](#features)
+    - [Start Screen](#start-screen) 
+    - [Bet Input](#bet-input)
+    - [Main Game Screen](#main-game-screen)
+
+5.  [Future Features](#possible-future-features)
+
+6.  [Technologies](#technologies)
+    - [Platforms](#platforms)
+    - [Python Modules](#python-modules)
+
+7.  [Flow Chart](#flow-chart)
+
+8.  [Testing](#testing)
+    - [Validator Testing](#validator-testing) 
+    - [Testing User Stories](#testing-user-stories)
+    - [Unit And Bug Testing](#unit-and-bug-testing)
+
+9.  [Deployment](#deployment)   
+
+10. [Credits](#credits)
+
+11. [Acknowledgements](#acknowledgements)
+
 ## How to play 
 This game was designed to be very simple to play and user friendly.
 Instructions are given along the way of what key to press to continue the game and the first letter of the input corresponds to the target word(for example S to start game).
