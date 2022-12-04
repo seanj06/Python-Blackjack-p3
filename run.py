@@ -6,7 +6,7 @@ import pyfiglet
 import colorama
 from colorama import Fore, Style
 
-
+# Init for colorama module
 colorama.init(autoreset=True)
 
 
@@ -90,7 +90,7 @@ def hand_value(hand):
     return total
 
 
-def check_winner(dealer, player, chips):
+def check_winner(dealer, player):
     """
     Compares total hand values of dealer and player and determines winner
     """
@@ -130,7 +130,7 @@ def main():
  chips ")
         bet(player_chips)
         deal_card_message()
-        for i in range(2):
+        for _ in range(2):
             deal_card(deck, player)
             deal_card(deck, dealer)
         print(f"\nYour cards are {' '.join(player)}\
@@ -159,8 +159,8 @@ def main():
             time.sleep(1)
             print(f"\nThe dealer has {' '.join(dealer)}\
   Total: {(hand_value(dealer))}\n")
-
-        check_winner(dealer, player, Chips)
+        # Second part of main game loop(after hands)
+        check_winner(dealer, player)
         print(f"\nYou have {player_chips.chip_balance} chips")
         if player_chips.chip_balance == 0:
             type_text("\nSorry you have run out of chips")
