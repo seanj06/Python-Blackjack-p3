@@ -35,7 +35,7 @@ Game developed by Sean Johnston for Code Institute Project Portfolio 3 using Pyt
 8.  [Testing](#testing)
     - [Validator Testing](#validator-testing) 
     - [Testing User Stories](#testing-user-stories)
-    - [Unit And Bug Testing](#unit-and-bug-testing)
+    - [Function And Bug Testing](#function-and-bug-testing)
 
 9.  [Deployment](#deployment)   
 
@@ -247,9 +247,9 @@ There is also a very simple chip betting system in the game. You will start the 
 
      - The user is given clear instructions in game on every input needed and are unable to continue until they input correctly.
 
- ### Unit and bug testing
+ ### Function and bug testing
 
-  - All other testing for this project including unit testing and bugs are on a seperate file found here [Unit Testing](docs/TESTING.md)  
+  - All other testing for this project including Function testing and bugs are on a seperate file found here [Function Testing](docs/TESTING.md)  
 
   [Top of page](#python-blackjack)
 
