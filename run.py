@@ -1,3 +1,6 @@
+"""
+Module imports
+"""
 import os
 import random
 import time
@@ -231,7 +234,11 @@ def name_input():
     while True:
         try:
             player_name = input("\nPlease enter your name \n").strip()
-            if player_name.isalpha() and len(player_name) > 2:
+            if (
+                player_name.isalpha() and
+                len(player_name) > 2 and
+                len(player_name) <= 9
+            ):
                 type_text(f"\nWelcome to the game {player_name} ")
                 time.sleep(1)
                 clear()
@@ -239,7 +246,8 @@ def name_input():
             else:
                 raise ValueError
         except ValueError:
-            print("Invalid input name must be more than 2 characters")
+            print("Invalid input name must between "
+                  "3 and 9 characters ")
             continue
 
 
